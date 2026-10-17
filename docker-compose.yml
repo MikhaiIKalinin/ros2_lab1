@@ -1,0 +1,14 @@
+services:
+  ros2_lab1:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        ROS_DISTRO: jazzy
+    image: ros2_lab1:latest
+    container_name: ros2_lab1_container
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./ros2_ws/src:/root/ros2_ws/src
+    command: bash
